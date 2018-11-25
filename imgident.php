@@ -30,6 +30,7 @@ function generateImage() {
 	}
 
 	var i = 0;
+	var usadas = [];
 	if (canvas.getContext) {
 		var ctx = canvas.getContext('2d');
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -40,11 +41,12 @@ function generateImage() {
 				var y = f*25;
 				if (ajustarPieza.indexOf(i) != -1) {
 					ctx.fillRect(x, y, 25, 25);
+					usadas.push(i);
 				}
 				i++;
 			}
 		}
-		console.log(canvas.toDataURL());
+		console.log(usadas);
 	}
 }
 
